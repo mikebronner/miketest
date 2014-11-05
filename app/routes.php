@@ -13,5 +13,7 @@
 
 Route::get('/', function()
 {
-	dd(User::first()->roles->first());
+	Auth::attempt(['email' => 'test@noemail.com', 'password' => 'unhashedbogus']);
+
+	return View::make('hello');
 });
